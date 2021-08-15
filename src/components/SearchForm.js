@@ -13,6 +13,7 @@ const SearchForm = ({ setSearch, setRegion, search, region }) => {
             <form className='search-form'>
                <FaSearch className='icon' />
                <input
+                  aria-label='country'
                   type='text'
                   placeholder='Search for a country...'
                   name='country'
@@ -26,7 +27,8 @@ const SearchForm = ({ setSearch, setRegion, search, region }) => {
             <form className='select-form'>
                <div className='focus'>
                   <select
-                     name='continents'
+                     aria-label='regions'
+                     name='regions'
                      id='region-select'
                      onChange={searchRegion}
                      value={region}

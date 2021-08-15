@@ -8,13 +8,14 @@ const Country = ({
    callingCodes,
    region,
    capital,
-   numericCode: id,
+   numericCode,
 }) => {
+   const id = callingCodes[0];
    return (
-      <Link to={`/country/${name}`} className='country'>
+      <Link to={`/country/${id}`} className='country'>
          <img src={flag} alt={name} className='flag' />
          <div className='country-info'>
-            <h4 className='country-name'>{name}</h4>
+            <h2 className='country-name'>{name}</h2>
             <p>
                Population: <span>{population.toLocaleString('en')}</span>
             </p>

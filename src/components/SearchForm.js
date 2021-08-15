@@ -8,7 +8,7 @@ const SearchForm = ({ setSearch, setRegion, search, region }) => {
    };
 
    return (
-      <section className='section container'>
+      <div className='section container'>
          <div className='forms'>
             <form className='search-form'>
                <FaSearch className='icon' />
@@ -26,11 +26,10 @@ const SearchForm = ({ setSearch, setRegion, search, region }) => {
             <form className='select-form'>
                <div className='focus'>
                   <select
-                     name='regions'
+                     name='continents'
                      id='region-select'
                      onChange={searchRegion}
                      value={region}
-                     placeholder='Filter by Region'
                   >
                      <option value='all' disabled selected hidden>
                         Filter by Region
@@ -44,7 +43,7 @@ const SearchForm = ({ setSearch, setRegion, search, region }) => {
                </div>
             </form>
          </div>
-      </section>
+      </div>
    );
 };
 

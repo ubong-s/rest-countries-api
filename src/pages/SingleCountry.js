@@ -3,23 +3,23 @@ import Loading from '../components/Loading';
 import { FaArrowLeft } from 'react-icons/fa';
 import { useParams, Link } from 'react-router-dom';
 
-const url = `https://restcountries.eu/rest/v2/name`;
+const url = `https://restcountries.eu/rest/v2/callingcode`;
 
 const SingleCountry = ({ loading, setLoading }) => {
    const [country, setCountry] = useState([]);
-   let { name } = useParams();
+   let { id } = useParams();
 
    const fetchCountry = useCallback(async () => {
       setLoading(true);
       try {
-         const response = await fetch(`${url}/${name}`);
+         const response = await fetch(`${url}/${id}`);
          const data = await response.json();
          setLoading(false);
          setCountry(data);
       } catch (error) {
          console.log(error);
       }
-   }, [name, setLoading]);
+   }, [id, setLoading]);
 
    useEffect(() => {
       fetchCountry();

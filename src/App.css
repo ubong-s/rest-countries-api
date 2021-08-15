@@ -389,7 +389,7 @@ select option {
    object-fit: cover;
 }
 
-.country-info h4 {
+.country-name {
    font-size: 1.15rem;
    margin-bottom: 0.75rem;
 }

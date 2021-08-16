@@ -8,11 +8,12 @@ const Country = ({
    callingCodes,
    region,
    capital,
-   numericCode,
+   numericCode: id,
 }) => {
-   const id = callingCodes[0];
+   const newName = name.replace(' ', '-');
+
    return (
-      <Link to={`/country/${id}`} className='country'>
+      <Link to={`/country/${newName}`} className='country'>
          <img src={flag} alt={name} className='flag' />
          <div className='country-info'>
             <h2 className='country-name'>{name}</h2>

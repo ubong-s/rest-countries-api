@@ -33,9 +33,11 @@ const SearchForm = ({ setSearch, setRegion, search, region }) => {
                      onChange={searchRegion}
                      value={region}
                   >
-                     <option value='all' disabled selected hidden>
+                     <option value='all' disabled hidden>
                         Filter by Region
                      </option>
+
+                     <option value='all'>All Regions</option>
                      <option value='africa'>Africa</option>
                      <option value='americas'>Americas</option>
                      <option value='asia'>Asia</option>

@@ -40,7 +40,7 @@ function App() {
             <Route exact path='/'>
                <Home setLoading={setLoading} loading={loading} />
             </Route>
-            <Route path='/country/:id'>
+            <Route path='/country/:name'>
                <SingleCountry setLoading={setLoading} loading={loading} />
             </Route>
             <Route path='*'>

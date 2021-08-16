@@ -10,7 +10,9 @@ const Country = ({
    capital,
    numericCode: id,
 }) => {
-   const newName = name.replace(' ', '-');
+   const newName = name.replace(/ /g, '-');
+
+   console.log(newName);
 
    return (
       <Link to={`/country/${newName}`} className='country'>

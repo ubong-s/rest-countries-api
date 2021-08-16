@@ -9,7 +9,7 @@ const SingleCountry = ({ loading, setLoading }) => {
    const [country, setCountry] = useState([]);
 
    let { name } = useParams();
-   const revName = name.replace('-', ' ');
+   const revName = name.replace(/-/g, ' ');
 
    const fetchCountry = useCallback(async () => {
       setLoading(true);

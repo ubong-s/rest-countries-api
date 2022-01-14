@@ -3,7 +3,7 @@ import Loading from '../components/Loading';
 import { FaArrowLeft } from 'react-icons/fa';
 import { useParams, Link } from 'react-router-dom';
 
-const url = `https://restcountries.eu/rest/v2/name`;
+const url = `https://restcountries.eu/v3.1/name`;
 
 const SingleCountry = ({ loading, setLoading }) => {
    const [country, setCountry] = useState([]);

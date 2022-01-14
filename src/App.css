@@ -377,6 +377,11 @@ select option {
    color: var(--text);
    cursor: pointer;
    background: var(--elements);
+   transition: 0.3s ease-in;
+}
+
+.country:hover {
+   opacity: 0.85;
 }
 
 .country-info {

@@ -18,8 +18,8 @@ const CountryList = ({ loading, nations }) => {
    return (
       <section className='section container'>
          <div className='countries'>
-            {nations.map((item) => {
-               return <Country key={item.numericCode} {...item} />;
+            {nations.map((item, index) => {
+               return <Country key={index} {...item} />;
             })}
          </div>
       </section>

@@ -3,22 +3,19 @@ import { Link } from 'react-router-dom';
 
 const Country = ({
    name,
-   flag,
+   flags,
    population,
-   callingCodes,
    region,
    capital,
    numericCode: id,
 }) => {
-   const newName = name.replace(/ /g, '-');
-
-   console.log(newName);
+   const slug = name.common.replace(/ /g, '-');
 
    return (
-      <Link to={`/country/${newName}`} className='country'>
-         <img src={flag} alt={name} className='flag' />
+      <Link to={`/country/${slug}`} className='country'>
+         <img src={flags.png} alt={name.common} className='flag' />
          <div className='country-info'>
-            <h2 className='country-name'>{name}</h2>
+            <h2 className='country-name'>{name.common}</h2>
             <p>
                Population: <span>{population.toLocaleString('en')}</span>
             </p>

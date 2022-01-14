@@ -1,18 +1,19 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import CountryList from '../components/CountryList';
 import SearchForm from '../components/SearchForm';
 
-const url = 'https://restcountries.eu/rest/v2';
+const url = 'https://restcountries.com/v3.1';
 
-const Home = ({ setLoading, loading }) => {
+const Home = () => {
+   const [loading, setLoading] = useState(true);
    const [search, setSearch] = useState('');
    const [region, setRegion] = useState('');
    const [nations, setNations] = useState([]);
 
-   const fetchNations = useCallback(async () => {
+   const fetchNations = async () => {
       setLoading(true);
       try {
-         if (search !== '') {
+         if (search.trim() !== '') {
             const response = await fetch(`${url}/name/${search}`);
             let data;
             data = await response.json();
@@ -20,9 +21,9 @@ const Home = ({ setLoading, loading }) => {
                data = [];
             }
 
-            setLoading(false);
             setNations(data);
-         } else if (region !== '') {
+            setLoading(false);
+         } else if (region.trim() !== '') {
             let response;
             if (region === 'all') {
                response = await fetch(`${url}/all`);
@@ -30,32 +31,34 @@ const Home = ({ setLoading, loading }) => {
                response = await fetch(`${url}/region/${region}`);
             }
             const data = await response.json();
-            setLoading(false);
             setNations(data);
+            setLoading(false);
          } else {
-            const response = await fetch(url);
+            const response = await fetch(`${url}/all`);
             const data = await response.json();
-            setLoading(false);
+
             setNations(data);
+            setLoading(false);
          }
       } catch (error) {
          console.log(error);
       }
-   }, [region, search, setLoading]);
+   };
 
    useEffect(() => {
       fetchNations();
-   }, [search, region, fetchNations]);
+      // eslint-disable-next-line
+   }, [search, region]);
 
    return (
       <main>
          <SearchForm
-            loading={loading}
+            region={region}
             search={search}
             setSearch={setSearch}
             setRegion={setRegion}
          />
-         <CountryList loading={loading} nations={nations} />
+         <CountryList nations={nations} loading={loading} />
       </main>
    );
 };

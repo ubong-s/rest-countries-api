@@ -2,11 +2,6 @@ import React from 'react';
 import { FaSearch } from 'react-icons/fa';
 
 const SearchForm = ({ setSearch, setRegion, search, region }) => {
-   const searchRegion = (e) => {
-      setRegion(e.target.value);
-      setSearch('');
-   };
-
    return (
       <div className='section container'>
          <div className='forms'>
@@ -30,7 +25,10 @@ const SearchForm = ({ setSearch, setRegion, search, region }) => {
                      aria-label='regions'
                      name='regions'
                      id='region-select'
-                     onChange={searchRegion}
+                     onChange={(e) => {
+                        setRegion(e.target.value);
+                        setSearch('');
+                     }}
                      value={region}
                   >
                      <option value='all' disabled hidden>

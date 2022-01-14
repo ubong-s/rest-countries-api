@@ -33,7 +33,7 @@ const Home = ({ setLoading, loading }) => {
             setLoading(false);
             setNations(data);
          } else {
-            const response = await fetch(url);
+            const response = await fetch(`${url}/all`);
             const data = await response.json();
             setLoading(false);
             setNations(data);

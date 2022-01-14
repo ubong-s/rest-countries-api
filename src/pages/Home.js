@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import CountryList from '../components/CountryList';
 import SearchForm from '../components/SearchForm';
 
-const url = 'https://restcountries.eu/rest/v2';
+const url = 'https://restcountries.com/v3.1';
 
 const Home = ({ setLoading, loading }) => {
    const [search, setSearch] = useState('');

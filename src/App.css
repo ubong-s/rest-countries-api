@@ -1,13 +1,11 @@
-/* Google Font Import */
 
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
 
 /* Variables */
 
 :root {
    --HomepageFont: 14px;
    --DetailPageFont: 16px;
-   --ff-primary: 'Nunito', sans-serif;
+   --ff-primary: 'Nunito Sans', sans-serif;
    --transition: all 0.3s linear;
    --radius: 0.25rem;
    --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
